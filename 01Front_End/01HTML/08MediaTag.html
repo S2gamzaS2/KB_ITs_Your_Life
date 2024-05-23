@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Media Tag</title>
+  </head>
+  <body>
+    <!-- 이미지 -->
+    <img src="https://buly.kr/4xVNC09" alt="강아지" width="300px" />
+    <img src="Nothing" alt="이미지가 없습니다" width="300px" />
+
+    <!-- 오디오 -->
+    <audio src="kalimba.mp3" controls="controls"></audio>
+    <!-- 웹 브라우저마다 지원하는 파일 확장자가 다른 문제 → source 태그 -->
+    <audio controls="controls">
+      <source src="Kalimba.mp3" type="audio/mp3" />
+    </audio>
+
+    <!-- 비디오 -->
+    <video controls="controls">
+      <source src="Wildlife.mp4" type="video/mp4" />
+    </video>
+
+    <!-- 동영상 불러오는 동안 다른 이미지 보여주기 -->
+    <video controls="controls" poster="https://buly.kr/4xVNC09"
+  </body>
+</html>
