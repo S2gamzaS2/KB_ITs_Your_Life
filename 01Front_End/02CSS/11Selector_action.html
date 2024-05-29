@@ -1,0 +1,28 @@
+<!-- 커서 올릴 때: 글자 색 빨간색, 40px로 커짐
+클릭 했을 때: 글자 색 파란색, -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Selector Basic</title>
+    <style>
+      h1 {
+        font-size: 32px;
+      }
+      h1:hover {
+        color: red;
+        /* transition: 애니메이션 속도 조정 */
+        transition: 0.4s;
+        font-size: 40px;
+      }
+      h1:active {
+        color: blue;
+        transition: 0.4s;
+        font-size: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>반응 선택자</h1>
+  </body>
+</html>
