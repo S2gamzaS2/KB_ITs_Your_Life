@@ -1,0 +1,67 @@
+<!-- 데스크톱: 메뉴 왼쪽
+모바일: 메뉴 아래쪽 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Responsive Web Pattern 3</title>
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1, maximum-scale=1"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 960px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      #menu {
+        width: 260px;
+        float: left;
+      }
+      #section {
+        width: 700px;
+        float: right;
+      }
+      li {
+        list-style: none;
+      }
+      @media screen and (max-width: 767px) {
+        body {
+          width: auto;
+        }
+        #menu {
+          width: auto;
+          float: none;
+        }
+        #section {
+          width: auto;
+          float: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="section">
+      <h1>Lorem, ipsum.</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, voluptas
+        aspernatur adipisci accusamus ad impedit aliquid odit aperiam tempore
+        dolores? Neque illo temporibus quo sint quisquam recusandae? Eius
+        officia voluptates accusamus laborum veniam, voluptate qui inventore
+        consectetur et deleniti cum eum atque distinctio explicabo quia repellat
+        asperiores aut iste eaque!
+      </p>
+    </div>
+    <div id="menu">
+      <ul>
+        <li>메뉴A</li>
+        <li>메뉴B</li>
+        <li>메뉴C</li>
+      </ul>
+    </div>
+  </body>
+</html>

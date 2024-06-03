@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Responsive Web Pattern 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style-type: none;
+        padding: 24px 0;
+        border-bottom: 1px solid #c7c7c7;
+      }
+      @media screen and (orientation: portrait) {
+        div.left {
+          display: none;
+        }
+      }
+      @media screen and (orientation: landscape) {
+        div.left {
+          width: 30%;
+          float: left;
+        }
+        div.right {
+          width: 70%;
+          float: left;
+        }
+      }
+      div.content {
+        padding: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="left">
+        <div class="content">
+          <h1>List</h1>
+          <ul>
+            <li>리스트1</li>
+            <li>리스트2</li>
+            <li>리스트3</li>
+            <li>리스트4</li>
+            <li>리스트5</li>
+            <li>리스트6</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="content">
+        <h1>Lorem, ipsum.</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+          quaerat hic et illo, nostrum aspernatur, porro dicta fuga laboriosam
+          debitis architecto magni eligendi iusto odio perferendis quo. Ullam,
+          optio vero.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+          quaerat hic et illo, nostrum aspernatur, porro dicta fuga laboriosam
+          debitis architecto magni eligendi iusto odio perferendis quo. Ullam,
+          optio vero.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+          quaerat hic et illo, nostrum aspernatur, porro dicta fuga laboriosam
+          debitis architecto magni eligendi iusto odio perferendis quo. Ullam,
+          optio vero.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+          quaerat hic et illo, nostrum aspernatur, porro dicta fuga laboriosam
+          debitis architecto magni eligendi iusto odio perferendis quo. Ullam,
+          optio vero.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+          quaerat hic et illo, nostrum aspernatur, porro dicta fuga laboriosam
+          debitis architecto magni eligendi iusto odio perferendis quo. Ullam,
+          optio vero.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
+          quaerat hic et illo, nostrum aspernatur, porro dicta fuga laboriosam
+          debitis architecto magni eligendi iusto odio perferendis quo. Ullam,
+          optio vero.
+        </p>
+        <p>Lorem, ipsum dolor.</p>
+        <p>Lorem, ipsum dolor.</p>
+        <p>Lorem, ipsum dolor.</p>
+      </div>
+    </div>
+  </body>
+</html>
