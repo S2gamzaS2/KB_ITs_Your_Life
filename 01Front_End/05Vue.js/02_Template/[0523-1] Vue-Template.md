@@ -1,17 +1,17 @@
 > **· MVVM 패턴** (Model-View-ViewModel)
 >: 뷰에서 채택하는 모델
-> <img src="https://velog.velcdn.com/images/seizethedai/post/d39c0570-90ef-4966-a828-400b2f9b8c8c/image.png" width=550px >
-> <img src="https://velog.velcdn.com/images/seizethedai/post/c339816d-8a08-403f-963a-5ccbb39e9753/image.png" width=550px>
+> <img src="https://velog.velcdn.com/images/seizethedai/post/d39c0570-90ef-4966-a828-400b2f9b8c8c/image.png" width=350px >
+> <img src="https://velog.velcdn.com/images/seizethedai/post/c339816d-8a08-403f-963a-5ccbb39e9753/image.png" width=350px>
 
 
 <br>
 
 # 1. 기본 디렉티브
-- **v-디렉티브**: Vue 프레임워크에 지시를 내리는 속성
- 	· v- 로 시작
+- **v-디렉티브**: Vue 프레임워크에 지시를 내리는 속성 <br>
+ 	· v- 로 시작 <br>
 	· html 요소와 관련된 작업 지정
 
-> 기존 HTML ⇨ `속성명="문자열"`
+> 기존 HTML ⇨ `속성명="문자열"` <br>
 > v-디렉티브 ⇨ `v-text="js표현식"`
     
 <br>
@@ -36,7 +36,7 @@
   });
 </script>
 ```
-**결과>>**
+**결과>>** <br>
 &lt;strong&gt;이 텍스트는 굵게 표시되지 않습니다.&lt;/strong&gt;
 <br>
 
@@ -61,17 +61,17 @@
 
 ### 2) v-bind
 
-`<태그 v-bind:속성="표현식">`
-`<태그 :속성="표현식">`
+`<태그 v-bind:속성="표현식">` <br>
+`<태그 :속성="표현식">` <br>
 (속성: HTML 속성)
 
 - 요소의 속성을 바인딩
 - 속성값을 문자열이 아닌 javascript 표현식으로 처리
 <br>
-- **단방향**
-    - Vue 인스턴스의 데이터나 속성이 바뀌면 UI 갱신
-    - 화면에 바인딩된 요소에서 값을 변경하더라도 데이터는 변경되지 않음
-        - 사용자의 입력: 양방향 / 사용자 입력과 무관: 단방향 사용
+- **단방향** <br>
+    - Vue 인스턴스의 데이터나 속성이 바뀌면 UI 갱신 <br>
+    - 화면에 바인딩된 요소에서 값을 변경하더라도 데이터는 변경되지 않음 <br>
+        - 사용자의 입력: 양방향 / 사용자 입력과 무관: 단방향 사용 <br>
     
 
 ```html
@@ -157,10 +157,12 @@
 <br>
 
 #### - checkbox / select
-> * checkbox
->① 다중선택 → 배열
->② 동의 여부 → Boolean
+> * checkbox <br>
+>① 다중선택 → 배열 <br>
+>② 동의 여부 → Boolean <br>
 >> Vue: v-model이 배열인지, 문자열인지 보고 다중선택인지 단일선택인지 판단
+
+<br>
 
 ① 다중 선택 (배열)
 
@@ -254,9 +256,6 @@
 
 
 <br>
-<br>
-
----
 
 <br>
 
@@ -348,9 +347,6 @@
 <br>
 <br>
 
----
-
-<br>
 
 # 3. 반복 렌더링 디렉티브
 
@@ -450,9 +446,9 @@
 <img src="https://velog.velcdn.com/images/seizethedai/post/2ef7f3f1-da78-454b-b7ad-0cea80813217/image.png">
 
 
-> - 인덱스 번호가 필요한 경우
-	`<태그 v-for="(contact, index) in contacts"`
-    `<태그 v-for="(val, key, index) in regions"`
+> - 인덱스 번호가 필요한 경우 <br>
+	`<태그 v-for="(contact, index) in contacts"` <br>
+    	`<태그 v-for="(val, key, index) in regions"`
 
 <br>
 
@@ -559,7 +555,7 @@
         - push() , splice() , sort()
 
 ```html
-<!-- 다시 렌더링되지 않음, Vue가 변경을 인지 못함               -->
+<!-- 다시 렌더링되지 않음, Vue가 변경을 인지 못함 -->
 model.contacts[0].tel = "123"
 model.contacts.push({no:104, name:"강황", tel:"452"});
 
