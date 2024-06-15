@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>v-model</title>
+  </head>
+  <body>
+    <!-- Vue파트 -> template (서식) -->
+    <div id="app">
+      <input type="text" v-model="name" />
+      <br />
+      입력한 값: <span>{{ name }}</span>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+
+        // 리턴하는 객체의 속성명만 바인딩 가능 -> proxy객체로 랩핑되어있기 때문
+        data() {
+          return { name: '' };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

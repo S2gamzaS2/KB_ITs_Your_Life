@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>v-text</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- v-text: <h1>Hello Vue3!</h1> 출력 -->
+      <!-- v-html: h1태그 크기의 Hello Vue3! 출력 -->
+      <h2 v-text="message"></h2>
+    </div>
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+      var model = { message: '<h1>Hello Vue3!</h1>' };
+      var vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return model;
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

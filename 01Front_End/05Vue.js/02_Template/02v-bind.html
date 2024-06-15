@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>v-bind</title>
+  </head>
+  <body>
+    <!-- Vue파트 -> template (서식) -->
+    <div id="app">
+      <input id="a" type="text" v-bind:value="message" />
+      <br />
+      <img v-bind:src="imagePath" />
+    </div>
+
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+      var vm = Vue.createApp({
+        name: 'App',
+
+        // 리턴하는 객체의 속성명만 바인딩 가능 -> proxy객체로 랩핑되어있기 때문
+        data() {
+          return {
+            message: 'v-bind 디렉티브',
+            imagePath: 'https://zrr.kr/NjCG',
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

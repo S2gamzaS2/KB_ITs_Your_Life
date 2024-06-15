@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>v-for</title>
+    <style>
+      #list {
+        width: 300px;
+        border: 1px solid black;
+        /* border-collapse: 표 테두리 단일선 */
+        border-collapse: collapse;
+      }
+      #list td,
+      #list th {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <table id="list">
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>전화번호</th>
+          </tr>
+        </thead>
+        <tbody id="contacts">
+          <tr v-for="contact in contacts" :key="contact.no">
+            <td>{{contact.no}}</td>
+            <td>{{contact.name}}</td>
+            <td>{{contact.tel}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            contacts: [
+              { no: 101, name: '감자', tel: '132' },
+              { no: 102, name: '고구마', tel: '391' },
+              { no: 103, name: '옥수수', tel: '923' },
+            ],
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

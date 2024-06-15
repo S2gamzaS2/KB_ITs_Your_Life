@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Proxy</title>
+  </head>
+  <body>
+    <div id="app">
+      <table id="list">
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>전화번호</th>
+          </tr>
+        </thead>
+        <tbody id="contacts">
+          <!-- contacts => Proxy -->
+          <tr v-for="(contact, index) in contacts" :key="contact.no">
+            <td>{{index + 1}}</td>
+            <td>{{contact.name}}</td>
+            <td>{{contact.tel}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let model = {
+        contacts: [
+          { no: 101, name: '감자', tel: '132' },
+          { no: 102, name: '고구마', tel: '391' },
+          { no: 103, name: '옥수수', tel: '923' },
+        ],
+      };
+
+      var vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return model;
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>v-else / v-else-if</title>
+  </head>
+  <body>
+    <div id="app">
+      잔고: <input v-model="balance" /> <br />
+      회원 등급:
+      <span v-if="balance > 1000">Gold</span>
+      <span v-else-if="balance >= 500">Silver</span>
+      <span v-else="balance">Bronze</span>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return { balance: 0 };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

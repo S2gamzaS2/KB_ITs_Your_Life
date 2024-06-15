@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>v-model Checkbox</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <h2>취미</h2>
+        <!-- hobby: 배열 / value값이 배열에 들어감 -->
+        <input type="checkbox" id="exercise" value="a" v-model="hobby" />
+        <label for="exercise">운동</label>
+        <input type="checkbox" id="reading" value="b" v-model="hobby" />
+        <label for="reading">독서</label>
+        <input type="checkbox" id="dance" value="c" v-model="hobby" />
+        <label for="dance">댄스</label>
+      </div>
+
+      <div>
+        <h2>상품 분류 선택</h2>
+        <!-- category: 단일 선택,문자열 / value값이 문자열로-->
+        <select v-model="category">
+          <option value="">---상품 분류 선택---</option>
+          <option value="A01">가전</option>
+          <option value="A02">음식</option>
+          <option value="A03">도서</option>
+        </select>
+      </div>
+      <hr />
+
+      <div>
+        선택한 취미 : {{hobby.join(',')}} <br />
+        선택한 상품 : {{category}}
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            hobby: [],
+            category: '',
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
