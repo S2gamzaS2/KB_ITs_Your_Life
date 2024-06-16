@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Default Event</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 마우스오른쪽 눌러도 메뉴를 띄우지 X -->
+      <div @contextmenu="ctxStop" style="position: absolute">
+        <a href="https://facebook.com" @click="confirmFB">페이스북</a>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {};
+        },
+        methods: {
+          ctxStop(e) {
+            e.preventDefault();
+          },
+          confirmFB(e) {
+            // comfirm(): 확인(true) / 취소(false)
+            if (!confirm('페이스북으로 이동?')) {
+              e.preventDefault();
+            }
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
