@@ -1,4 +1,4 @@
-package afternoon.poly3;
+package afternoon.poly3.casting1;
 
 public class Parent {
     public void parentMethod() {
