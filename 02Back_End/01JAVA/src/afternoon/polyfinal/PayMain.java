@@ -10,7 +10,7 @@ public class PayMain {
         int option;
         int amount;
 
-        System.out.print("결제옵션입력하세욘~ (1.KB 2.Kakao) >> ");
+        System.out.print("결제옵션입력하세욘~ (1.KB 2.Kakao 3.Naver) >> ");
         option = sc.nextInt();
 
         System.out.print("결제금액입력하세욘~ >> ");
@@ -21,8 +21,10 @@ public class PayMain {
             paySystem.setPay(kbPay);
         } else if (option == 2){
             paySystem.setPay(new KakaoPay());
+        } else {
+            paySystem.setPay(new NaverPay());
         }
-        
+
         paySystem.payment(amount);
     }
 }
