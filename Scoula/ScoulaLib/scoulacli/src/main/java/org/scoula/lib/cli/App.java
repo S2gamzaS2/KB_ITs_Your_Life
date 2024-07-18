@@ -25,10 +25,16 @@ public abstract class App {
 
     public void run() {
         init();
+
         while(true) {
-            menu.printMenu();
-            Command command = menu.getSelect();
-            command.execute();
+            try {
+                menu.printMenu();
+                Command command = menu.getSelect(); // 예외 -> BadMenuException로 대체해서 예외 던지기
+                command.execute();
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.out.println("에러: " + e.getMessage());
+            }
         }
     }
 }
