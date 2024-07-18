@@ -1,4 +1,4 @@
-package v2_v3;
+package v4.domain;
 
 // 데이터 관리 클래스
 public class StudentScores {
@@ -7,7 +7,7 @@ public class StudentScores {
 
     // Singleton 패턴
         // 생성자-private
-        // static 멤버로 초기화 - private (Null 대입 못하게 하려고)
+        // static 멤버로 딱 한 번 초기화 - private (Null 대입 못하게 하려고)
         // getInstance() - public
     private StudentScores() {}
     private static StudentScores instance = new StudentScores();
@@ -16,7 +16,7 @@ public class StudentScores {
     }
 
     // 학생수 리턴
-    public void getStudentNum() {
+    public int getStudentNum() {
         return studentNum;
     }
 
