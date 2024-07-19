@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 // lombok
 @NoArgsConstructor // 기본 생성자
@@ -20,9 +21,24 @@ public class Todo implements Cloneable{ // 복제(clone)을 허용하는 인터�
     private boolean done;
     private Date date;
 
-    @Builder // 이 생성자에 준해서 Builder를 운영
+    @Builder // 생성자 레벨에 붙인 Builder -> 이 생성자에 준해서 Builder를 운영
     // 호출 할 수 있는 설정: title(), description(), done() / id, date에 대해서는 Building 못함
     public Todo (String title, String description, boolean done) {
         this(gid++, title, description, done, new Date());
+    }
+
+    @Override
+    public Object clone() { // 부모에서는 protect 였던 것을 public으로 변경
+         try {
+            return super.clone();
+         } catch (CloneNotSupportedException e) {
+             throw new RuntimeException(e);
+         }
+    }
+
+    // 문자열로 날짜를 리턴
+    public String getRegDate() {
+        SimpleDateFormat sdf =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // 패턴 문자열
+        return sdf.format(date);
     }
 }
