@@ -3,10 +3,11 @@ package org.scoula.todo.command;
 import org.scoula.lib.cli.command.Command;
 import org.scoula.lib.cli.ui.Input;
 import org.scoula.todo.dao.TodoDao;
+import org.scoula.todo.dao.TodoListDao;
 
 // 삭제
 public class DeleteTodoCommand implements Command {
-    TodoDao dao = TodoDao.getInstance();
+    TodoDao dao = TodoListDao.getInstance();
 
     @Override
     public void execute() {
