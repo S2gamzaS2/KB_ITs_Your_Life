@@ -13,7 +13,7 @@ public class TodoDao {
         return instance;
     }
 
-    private List<Todo> list;
+    private List<Todo> list; // 리스트를 사용해서 운영
 
     private TodoDao() {
         list = new ArrayList<>();
@@ -27,10 +27,17 @@ public class TodoDao {
         }
     }
 
+    // 리스트에 대한 CRUD
+    // C : 추가
+    // R : 목록read, 하나read
+    // U : 교체
+    // D : 리스트에서 제거
+
     public List<Todo> getList() {
         return list;
     }
 
+    // 단인 element 읽기
     public Todo getTodo(int id) {
         for(Todo todo: list) {
             if(todo.getId() == id) {
@@ -40,9 +47,12 @@ public class TodoDao {
         return null;
     }
 
+    // 추가
     public void add(Todo todo) {
         list.add(todo);
     }
+
+    // 업데이트
     public void update(Todo todo) {
         for(int i = 0; i < list.size(); i++) {
             if(todo.getId() == list.get(i).getId()) {
@@ -51,6 +61,7 @@ public class TodoDao {
         }
     }
 
+    // 삭제
     public void delete (int id) {
         for(int i = 0; i < list.size(); i++) {
             if(list.get(i).getId() == id) {

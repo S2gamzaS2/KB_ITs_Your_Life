@@ -28,7 +28,11 @@ public class Todo implements Cloneable{ // 복제(clone)을 허용하는 인터�
     }
 
     @Override
-    public Object clone() { // 부모에서는 protect 였던 것을 public으로 변경
+    // 부모에서는 protect 였던 것을 public으로 변경
+    // return은 Object
+    // 실제 사용시에는 down casting 해야 함
+    // 반드시 Cloneable 인스턴스를 구현한 객체만 clone 호출 가능
+    public Object clone() {
          try {
             return super.clone();
          } catch (CloneNotSupportedException e) {
