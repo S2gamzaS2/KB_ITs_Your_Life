@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3e62e62-f47f-4988-86db-284126ba45c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/todo/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/todo/TodoApp_v1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/todo/service/TodoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/scoula/todo/TodoApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scoula/todo/TodoApp.java" afterDir="false" />
-    </list>
+    <list default="true" id="d3e62e62-f47f-4988-86db-284126ba45c5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,7 +129,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721288262457</updated>
       <workItem from="1721288263528" duration="5308000" />
-      <workItem from="1721363019223" duration="14070000" />
+      <workItem from="1721363019223" duration="14306000" />
     </task>
     <servers />
   </component>
