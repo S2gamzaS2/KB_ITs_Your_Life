@@ -13,6 +13,7 @@ public class PrintTodoCommand implements Command {
             String line = "%2d] %s".formatted(todo.getId(), todo.getTitle());
             System.out.println(line);
         }
+
         System.out.println();
     }
 }
