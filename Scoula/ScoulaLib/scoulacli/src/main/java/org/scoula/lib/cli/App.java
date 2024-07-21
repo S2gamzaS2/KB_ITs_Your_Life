@@ -9,7 +9,11 @@ public abstract class App {
     Menu menu;
 
     public App() {
+    }
 
+    // 메서드 추가 - 외부에서 메뉴가 들어오도록~
+    public void setMenu(Menu menu) {
+        this.menu = menu;
     }
 
     public void init() {
