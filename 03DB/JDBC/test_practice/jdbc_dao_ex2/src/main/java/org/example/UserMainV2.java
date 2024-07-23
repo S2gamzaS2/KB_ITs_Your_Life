@@ -2,9 +2,9 @@ package org.example;
 
 import java.util.List;
 
-public class UserMain {
+public class UserMainV2 {
     public static void main(String[] args) {
-        UserDao dao = new UserDao();
+        UserDaoV2 dao = new UserDaoV2();
 
         // C) UserVo 객체..
 //        UserVo newUser = new UserVo(0, "gamza", "1234");
@@ -29,7 +29,6 @@ public class UserMain {
         // JOIN
         dao.getAllUsersWithName();
 
-        dao.getUsers(3);
-
+        dao.close();
     }
 }

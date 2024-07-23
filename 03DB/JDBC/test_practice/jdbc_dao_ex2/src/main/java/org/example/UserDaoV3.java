@@ -4,10 +4,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDao {
-    // C) 유저 추가
-    // 매개변수말고 객체타입을 받아서 하는 버전~
-    public void addUser(UserVo newUser) {
+// static 사용 - 생성이 안돼도 메모리에 존재,,~ 프로그램이 로딩될때~ 다 존재~ 그냥 갖다쓰면 됨 - 안 나올 수 있음~
+public class UserDaoV3 {
+    static Connection conn = null;
+
+    static {
         try {
             // 1. Driver 커넥터 설정
             String driver = "com.mysql.cj.jdbc.Driver";
@@ -18,14 +19,18 @@ public class UserDao {
             String url = "jdbc:mysql://localhost:3306/user_ex";
             String id = "root";
             String password = "0000";
-            Connection conn = DriverManager.getConnection(url, id, password);
+            conn = DriverManager.getConnection(url, id, password);
             System.out.println("2. DB 연결 OK");
-//            if (conn != null) {
-//                System.out.println("2. DB 연결 OK");
-//            }
 
-            // 여기서부터 진짜루~~///////////////////////////////////////
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
+    // C) 유저 추가
+    // 매개변수말고 객체타입을 받아서 하는 버전~
+    public void addUser(UserVo newUser) {
+        try {
             // 3. SQL문 생성
             String sql = "INSERT INTO users (email, password) VALUES (?,?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -41,10 +46,6 @@ public class UserDao {
                 System.out.println("회원 추가 실패");
             }
 
-            //5. 직접 자원 해제 (연걸 끊기)
-            pstmt.close();
-            conn.close();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,18 +56,6 @@ public class UserDao {
         List<UserVo> userList = new ArrayList<>();
 
         try {
-            // 1. Driver 커넥터 설정
-            String driver = "com.mysql.cj.jdbc.Driver";
-            Class.forName(driver);
-            System.out.println("1. Driver 설정 OK");
-
-            // 2. DB연결
-            String url = "jdbc:mysql://localhost:3306/user_ex";
-            String id = "root";
-            String password = "0000";
-            Connection conn = DriverManager.getConnection(url, id, password);
-            System.out.println("2. DB 연결 성공");
-
             // 3. SQL문 생성
             String sql = "SELECT * FROM users";
             Statement stmt = conn.createStatement();
@@ -85,11 +74,6 @@ public class UserDao {
                 userList.add(user);
             }
 
-            //5. 직접 자원 해제 (연걸 끊기)
-            rs.close();
-            stmt.close();
-            conn.close();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -98,65 +82,9 @@ public class UserDao {
         return userList;
     }
 
-    // R-2) 특정 회원
-    public void getUsers(int userid) {
-        UserVo user = null;
-
-        try {
-            // 1. Driver 커넥터 설정
-            String driver = "com.mysql.cj.jdbc.Driver";
-            Class.forName(driver);
-            System.out.println("1. Driver 설정 OK");
-
-            // 2. DB연결
-            String url = "jdbc:mysql://localhost:3306/user_ex";
-            String id = "root";
-            String password = "0000";
-            Connection conn = DriverManager.getConnection(url, id, password);
-            System.out.println("2. DB 연결 성공");
-
-            // 3. SQL문 생성
-            String sql = "SELECT * FROM users WHERE id = ?";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, userid);
-
-            // 4. SQL문 전송 및 실행
-            ResultSet rs = pstmt.executeQuery();
-
-            if(rs.next()) {
-                int usersid = rs.getInt("id");
-                String email = rs.getString("email");
-                String userpassword = rs.getString("password");
-
-                user = new UserVo(usersid, email, userpassword);
-                System.out.printf("ID: %d\nEmail: %s\nPassword: %s\n", userid, email, userpassword);
-            }
-            //5. 직접 자원 해제 (연걸 끊기)
-            rs.close();
-            pstmt.close();
-            conn.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-
     // U) 회원 정보 수정
     public void updateUser(UserVo newUser) {
         try {
-            // 1. Driver 커넥터 설정
-            String driver = "com.mysql.cj.jdbc.Driver";
-            Class.forName(driver);
-            System.out.println("1. Driver 설정 OK");
-
-            // 2. DB연결
-            String url = "jdbc:mysql://localhost:3306/user_ex";
-            String id = "root";
-            String password = "0000";
-            Connection conn = DriverManager.getConnection(url, id, password);
-            System.out.println("2. DB 연결 OK");
-
             // 3. SQL문 생성
             String sql = "UPDATE users SET email = ?, password = ? WHERE id = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -173,10 +101,6 @@ public class UserDao {
                 System.out.println("회원 정보 수정 실패");
             }
 
-            // 5. 자원 해제
-            pstmt.close();
-            conn.close();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -187,18 +111,6 @@ public class UserDao {
     // D) 회원 정보 삭제
     public void deleteUser(int userid) {
         try {
-            // 1. Driver 커넥터 설정
-            String driver = "com.mysql.cj.jdbc.Driver";
-            Class.forName(driver);
-            System.out.println("1. Driver 설정 OK");
-
-            // 2. DB연결
-            String url = "jdbc:mysql://localhost:3306/user_ex";
-            String id = "root";
-            String password = "0000";
-            Connection conn = DriverManager.getConnection(url, id, password);
-            System.out.println("2. DB 연결 OK");
-
             // 3. SQL문 생성
             String sql = "DELETE FROM users WHERE id = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -213,10 +125,6 @@ public class UserDao {
                 System.out.println("회원 삭제 실패");
             }
 
-            // 5. 자원 해제
-            pstmt.close();
-            conn.close();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -225,18 +133,6 @@ public class UserDao {
     // getAllUsersWithName - JOIN
     public void getAllUsersWithName() {
         try {
-            // 1. Driver 커넥터 설정
-            String driver = "com.mysql.cj.jdbc.Driver";
-            Class.forName(driver);
-            System.out.println("1. Driver 설정 OK");
-
-            // 2. DB연결
-            String url = "jdbc:mysql://localhost:3306/user_ex";
-            String id = "root";
-            String password = "0000";
-            Connection conn = DriverManager.getConnection(url, id, password);
-            System.out.println("2. DB 연결 OK");
-
             // 3. SQL문 생성
             String sql = "SELECT u.id, i.name, u.email, u.password FROM users u " +
                     "JOIN users_info i " +
@@ -254,11 +150,15 @@ public class UserDao {
 
                 System.out.printf("ID: %d, Email: %s, Password: %s, Name: %s%n", userid, email, userpassword, username);
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-            // 5. 자원 해제
-            rs.close();
-            stmt.close();
+    public void close() {
+        try {
             conn.close();
+            System.out.println("연결 끊");
         } catch (Exception e) {
             e.printStackTrace();
         }
