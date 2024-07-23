@@ -158,6 +158,7 @@ public class UserDao {
             System.out.println("2. DB 연결 OK");
 
             // 3. SQL문 생성
+
             String sql = "UPDATE users SET email = ?, password = ? WHERE id = ?";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, newUser.getEmail());
