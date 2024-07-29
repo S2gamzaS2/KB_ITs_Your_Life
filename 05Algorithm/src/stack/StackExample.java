@@ -3,7 +3,7 @@ package stack;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class ArrayDequeExample {
+public class StackExample {
     public static void main(String[] args) {
         Deque<Integer> st = new ArrayDeque<>();
 
