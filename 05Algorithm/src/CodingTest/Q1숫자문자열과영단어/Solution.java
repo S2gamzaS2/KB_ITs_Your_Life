@@ -1,6 +1,4 @@
-package CodingTest.Q1;
-
-import java.util.*;
+package CodingTest.Q1숫자문자열과영단어;
 
 class Solution {
     public int solution(String s) {

@@ -1,4 +1,4 @@
-package CodingTest.Q2;
+package CodingTest.Q2과일장수;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package CodingTest.Q3;
+package CodingTest.Q3호텔대실;
 
 import java.util.*;
 
