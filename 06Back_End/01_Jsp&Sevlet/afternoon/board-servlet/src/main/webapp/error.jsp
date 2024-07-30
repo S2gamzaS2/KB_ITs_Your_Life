@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>에러 발생</h1>
-    <p>요청을 처리하는 도중 에러가 발생했습니다</p>
-    <p>에러 메세지 : <%= exception.getMessage()%></p>
+    <p>요청을 처리하는 도중 에러가 발생했습니다.</p>
+    <p>에러 메세지 : <%= exception.getMessage() %></p>
 </body>
 </html>
