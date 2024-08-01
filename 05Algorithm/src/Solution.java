@@ -1,64 +1,15 @@
 import java.util.*;
 
 class Solution {
-    public int solution(int k, int m, int[] score) {
-        Queue<Integer> q = new ArrayDeque<>();
-
-        int answer = 0;
-        Arrays.sort(score);
-        int len = score.length;
-
-        int a = len / m ;
-        int b = a * m;
-
-        for(int i = len - 1; i >= len - b; i--) {
-            q.add(score[i]);
-        }
-
-        for(int i = 0; i < a; i++) {
-            int min = q.remove();
-            for(int j = 0; j < m - 1; j++) {
-                int num = q.remove();
-                if(num < min) {
-                    min = num;
-                }
-            }
-
-            int price = min * m;
-            answer += price;
-        }
+    public String solution(String new_id) {
+        String answer = "";
         return answer;
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int k = 3;
-        int m = 4;
-        int[] score = {1, 2, 3, 1, 2, 3, 1};
-        int result = solution.solution(k, m, score);
+        String new_id = "...!@BaT#*..y.abcdefghijklm";
+        String result = solution.solution(new_id);
         System.out.println(result);
-    }
-
-    public static class test {
-        public static void main(String[] args) {
-            Queue<Integer> q = new ArrayDeque<>();
-            int k = 3;
-            int m = 4;
-            int[] score = {1, 2, 3, 1, 2, 3, 1};
-            // 1 1 1 2 2 3 3
-            int answer = 0;
-            Arrays.sort(score);
-            int len = score.length;
-
-            int a = len / m ;
-            int b = a * m;
-
-            for(int i = len - 1; i >= len - b; i--) {
-                q.add(score[i]);
-            }
-
-
-
-        }
     }
 }

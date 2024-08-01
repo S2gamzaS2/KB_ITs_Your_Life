@@ -7,7 +7,7 @@ class Solution {
         ArrayList<int[]> arrlist = new ArrayList<>();
 
         int answer = 0;
-        int[][] new_time = new String[book_time.length][2];
+        int[][] new_time = new int[book_time.length][2];
 
         Arrays.sort(book_time, new Comparator<String[]>() {
             @Override
