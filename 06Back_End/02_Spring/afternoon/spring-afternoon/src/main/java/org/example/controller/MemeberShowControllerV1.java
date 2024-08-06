@@ -1,0 +1,27 @@
+package org.example.controller;
+
+import lombok.extern.slf4j.Slf4j;
+import org.example.dto.MemberDtoListV1;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import javax.servlet.http.HttpServletRequest;
+
+@Controller
+@Slf4j
+public class MemeberShowControllerV1 {
+    private MemberDtoListV1 memberList = MemberDtoListV1.getInstance();
+
+    @GetMapping("/member/show")
+    public String process(HttpServletRequest request) {
+        log.info("==========> 회원 추가 Request 호출, /member/form/save");
+
+        String id = request.getParameter("id");
+        String name = request.getParameter("name");
+
+        memberList.addList(id, name);
+        request.setAttribute("memberList", memberList.getList());
+
+        return "member-show";
+    }
+}
