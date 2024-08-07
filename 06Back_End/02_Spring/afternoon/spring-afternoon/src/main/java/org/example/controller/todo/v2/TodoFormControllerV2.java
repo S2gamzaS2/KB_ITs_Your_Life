@@ -1,4 +1,4 @@
-package org.example.controller.todo;
+package org.example.controller.todo.v2;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @Slf4j
-public class TodoFormControllerV1 {
+public class TodoFormControllerV2 {
 
-    @GetMapping("/todo/form")
+    @GetMapping("/todo/v2/form")
     public String todoForm(HttpServletRequest request, HttpServletResponse response) {
         log.info("==============> TODO 추가 페이지 호출, /todo/form");
 
-        return "todo-form";
+        return "todo-form2";
     }
 }

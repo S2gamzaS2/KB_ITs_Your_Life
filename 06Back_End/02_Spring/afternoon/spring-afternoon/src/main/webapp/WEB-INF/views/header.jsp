@@ -13,4 +13,10 @@
     <a href="/member/v2/show">회원 목록 v2</a>
     <a href="/todo/v2/form">TODO 등록 v2</a>
     <a href="/todo/v2/show">TODO 보기 v2</a>
+    <h2>V3</h2>
+    <a href="/">HOME</a>
+    <a href="/member/v3/form">회원 등록 v3</a>
+    <a href="/member/v3/show">회원 목록 v3</a>
+    <a href="/todo/v3/form">TODO 등록 v3</a>
+    <a href="/todo/v3/show">TODO 보기 v3</a>
 </header>
