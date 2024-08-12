@@ -3,7 +3,6 @@ import java.util.*;
 class Solution {
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<>();
-        boolean[] visited = new boolean[n];
 
         backtrack(1, new ArrayList<>(), n, k, result);
 
@@ -28,7 +27,7 @@ class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
         int n = 4;
-        int k = 2;
+        int k = 3;
         List<List<Integer>> result = solution.combine(n, k);
         System.out.println(result);
     }
