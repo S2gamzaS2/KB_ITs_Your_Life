@@ -10,19 +10,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 @Slf4j
 public class TodoShowControllerV2 {
-    private TodoDtoListV2 todoList;
+    private TodoDtoListV2 todoDtoList;
 
     @Autowired
     public TodoShowControllerV2(TodoDtoListV2 todoDtoList) {
-        this.todoList = todoDtoList;
+        this.todoDtoList = todoDtoList;
     }
 
     @GetMapping("/todo/v2/show")
-    public String todoShow(Model model) {
+    public String process(Model model) {
         log.info("==============> TODO 목록 조회 페이지 호출, /todo/v2/show");
 
-        model.addAttribute("todoList", todoList.getList());
-
+        model.addAttribute("todoDtoList", todoDtoList.getList());
         return "todo-show2";
     }
 }

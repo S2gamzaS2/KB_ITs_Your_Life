@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -20,16 +21,16 @@ public class TodoSaveControllerV2 {
         this.todoDtoList = todoDtoList;
     }
 
-    @RequestMapping(value="/todo/v2/form/save", method = RequestMethod.GET)
-    public String todoSave(Model model, HttpServletRequest request) {
-        log.info("===========> TODO 추가 Request 호출, /todo/form/save");
+    @RequestMapping(value = "/todo/v2/form/save", method = RequestMethod.GET)
+    public String process(
+            @RequestParam("todo") String todo,
+            Model model) {
 
-        String todo = request.getParameter("todo");
+        log.info("===========> TODO 추가 Request 호출, /todo/v2/form/save");
         todoDtoList.addList(todo);
 
-        model.addAttribute("todoList", todoDtoList.getList());
+        model.addAttribute("todoDtoList", todoDtoList.getList());
 
         return "todo-show2";
     }
 }
-

@@ -10,16 +10,16 @@ public class TodoDtoListV2 {
     private List<TodoDto> todoDtoList;
 
     private TodoDtoListV2() {
-        this.todoDtoList = new ArrayList<>(); // 리스트 초기화
-        // 테스트데이터추가
+        this.todoDtoList = new ArrayList<>();
         this.addList("스프링 정복하기");
         this.addList("코테도 정복하기");
     }
-
 
     public void addList(String todo) {
         todoDtoList.add(new TodoDto(todo));
     }
 
-    public List<TodoDto> getList() {return todoDtoList;}
+    public List<TodoDto> getList() {
+        return todoDtoList;
+    }
 }

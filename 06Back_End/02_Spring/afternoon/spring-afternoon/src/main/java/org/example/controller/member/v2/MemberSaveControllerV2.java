@@ -1,7 +1,8 @@
 package org.example.controller.member.v2;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.dto.member.MemberDtoListV1;
+import org.example.dto.member.MemberDtoListV2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,18 +12,25 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @Slf4j
 public class MemberSaveControllerV2 {
-    private MemberDtoListV1 memberList = MemberDtoListV1.getInstance();
+    private MemberDtoListV2 memberList;
 
-    @RequestMapping(value="/member/v2/form/save", method = RequestMethod.GET)
+    @Autowired
+    public MemberSaveControllerV2(MemberDtoListV2 memberDtoList) {
+        this.memberList = memberDtoList;
+    }
+
+    //겟 포스트 맵핑을 한 번에 할 수 있는 리퀘스트 맵핑
+    @RequestMapping(value = "/member/v2/form/save", method = RequestMethod.GET)
     public String process(
             @RequestParam("id") String id,
             @RequestParam("name") String name,
-            Model model) { //request 지우면 안됨~ 파라미터받아야댐~
-        log.info("=====================> 회원 추가 Request 호출, /member/form/save");
+            Model model) {
+        // 파라미터 받을 때 request 쓰기 때문에 여기선 지우면 안된다
+        log.info("===========> 회원 추가 Request 호출, /member/v2/form/save");
 
         memberList.addList(id, name);
-
         model.addAttribute("memberList", memberList.getList());
+
         return "member-show2";
     }
 }

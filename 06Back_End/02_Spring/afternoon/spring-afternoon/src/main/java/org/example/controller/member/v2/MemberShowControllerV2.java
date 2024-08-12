@@ -1,6 +1,7 @@
 package org.example.controller.member.v2;
 
 import lombok.extern.slf4j.Slf4j;
+
 import org.example.dto.member.MemberDtoListV2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,5 +27,3 @@ public class MemberShowControllerV2 {
     }
 
 }
-
-

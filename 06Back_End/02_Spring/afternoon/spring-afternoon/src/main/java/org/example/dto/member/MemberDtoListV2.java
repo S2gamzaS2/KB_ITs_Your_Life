@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component // 자동으로 Spring이 등록..~
+@Component
 public class MemberDtoListV2 {
     private List<MemberDto> memberDtoList;
 
@@ -17,7 +17,6 @@ public class MemberDtoListV2 {
 
     public void addList(String id, String name) {
         memberDtoList.add(new MemberDto(id, name));
-
     }
 
     public List<MemberDto> getList() {

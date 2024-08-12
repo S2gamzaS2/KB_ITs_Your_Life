@@ -11,16 +11,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class MemberRepository {
-    private MemberMapper memberMapper;
+    private final MemberMapper memberMapper;
 
 //    @Autowired
 //    public MemberRepository(MemberMapper memberMapper) {
 //        this.memberMapper = memberMapper;
 //    }
 
+    public MemberDto save(final MemberDto memberDto) {
+        return null;
+    }
+
     public List<MemberDto> findAll() {
         return memberMapper.findAll();
+
     }
 }
+

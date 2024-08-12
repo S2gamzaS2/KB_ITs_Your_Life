@@ -22,5 +22,3 @@ public class MemberShowControllerV1 {
     }
 
 }
-
-

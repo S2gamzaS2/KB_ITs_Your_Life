@@ -27,14 +27,14 @@ public class MemberControllerV4 {
         this.memberRepository = memberRepository;
     }
 
-    @GetMapping("/show")
+    @GetMapping("/show") // 실제주소: member/v3/show
     public String memberList(Model model) {
-        log.info("=======> 회원 목록 조회 페이지 호출, /member/v4/show");
+        log.info("=====================> 회원 목록 조회 페이지 호출, /member/v4/show");
 
-        List<MemberDto> memberDtoList = memberRepository.findAll();
+        List<MemberDto> list = memberRepository.findAll();
 
-        for (MemberDto memberDto : memberDtoList) {
-            System.out.println(memberDto.toString());
+        for (MemberDto member : list) {
+            System.out.println(member.toString());
         }
 
         model.addAttribute("memberList", memberRepository.findAll());

@@ -8,13 +8,11 @@ public class TodoDtoListV1 {
     private List<TodoDto> todoDtoList;
 
     private TodoDtoListV1() {
-        this.todoDtoList = new ArrayList<>(); // 리스트 초기화
-        // 테스트데이터추가
+        this.todoDtoList = new ArrayList<>();
         this.addList("스프링 정복하기");
         this.addList("코테도 정복하기");
     }
 
-    //싱글톤 인스턴스 반환 메소드
     public static synchronized TodoDtoListV1 getInstance() {
         if (instance == null) {
             instance = new TodoDtoListV1();
@@ -26,5 +24,7 @@ public class TodoDtoListV1 {
         todoDtoList.add(new TodoDto(todo));
     }
 
-    public List<TodoDto> getList() {return todoDtoList;}
+    public List<TodoDto> getList() {
+        return todoDtoList;
+    }
 }
