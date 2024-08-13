@@ -14,6 +14,8 @@ import java.util.List;
 @RestController
 @Slf4j
 @RequiredArgsConstructor
+//@CrossOrigin(origins = "*") // CORS 이슈 우회, *: 모든 접속 허용 -> 문제 생길 수 있돠^_^..;;
+@CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/post/v1/rest")
 public class RestPostController {
     private final PostRepository postRepository;
