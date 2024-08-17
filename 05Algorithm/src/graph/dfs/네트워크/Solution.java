@@ -38,5 +38,6 @@ class Solution {
         };
         int result = solution.solution(n, computers);
         System.out.println(result);
+        
     }
 }
