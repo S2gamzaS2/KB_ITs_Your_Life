@@ -6,6 +6,6 @@
     <a href="/login_form.jsp">로그인</a> | <a href="#">회원가입</a> <br>
 </c:if>
 <c:if test="${!empty users}">
-    ${users.name} | <a href="#">로그아웃</a> <br>
+    ${users.name} | <a href="/logout">로그아웃</a> <br>
 </c:if>
 </hr>
