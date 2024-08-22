@@ -4,13 +4,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller // bean으로 등록 됨
-@Slf4j //
+@Controller //JavaBean으로 등록됨 ≒ @Component
+@Slf4j // 멤버 필드가 자동으로 생성됨 (log)
 public class HomeController {
 
-    @GetMapping("/") // getMap("/", ::home) 하라는 뜻~
+    @GetMapping("/") //  getMap.put("/", 메서드)
     public String home() {
-        log.info("=================> HomeController /"); // Console 출력
-        return "index"; // View의 이름 -> prefix surfix와 결합함~ => /WEB-INF/views/index.jsp
+        log.info("====================> HomeController /");
+        return "index"; // view 이름  →  /WEB-INF/views/index.jsp
     }
 }
