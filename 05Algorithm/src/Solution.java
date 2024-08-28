@@ -13,3 +13,16 @@ class Solution {
         System.out.println(result);
     }
 }
+
+class Edge implements Comparable<Edge> {
+    int node, cost;
+    public Edge(int node, int cost){
+        this.node = node;
+        this.cost = cost;
+    }
+    @Override
+    public int compareTo(Edge other) {
+        return Integer.compare(this.cost, other.cost);
+    }
+}
+
