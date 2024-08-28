@@ -13,11 +13,11 @@ public class UserConfig implements WebMvcConfigurer {
         return new BCryptPasswordEncoder();
     }
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        System.out.println("시큐리티 인터셉터가 등록되었습니도~~~~~~!!@@~~!!!>_<");
-        registry.addInterceptor(new AuthenticationInterceptor())
-                .addPathPatterns("/**")
-                .excludePathPatterns("/", "/user/**", "/resources/**");
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        System.out.println("시큐리티 인터셉터가 등록되었습니도~~~~~~!!@@~~!!!>_<");
+//        registry.addInterceptor(new AuthenticationInterceptor())
+//                .addPathPatterns("/**")
+//                .excludePathPatterns("/", "/user/**", "/resources/**");
+//    }
 }
