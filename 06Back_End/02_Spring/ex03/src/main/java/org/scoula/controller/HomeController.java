@@ -2,6 +2,7 @@ package org.scoula.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller //JavaBean으로 등록됨 ≒ @Component
@@ -9,8 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     @GetMapping("/") //  getMap.put("/", 메서드)
-    public String home() {
+    public String home(Model model) {
         log.info("====================> HomeController /");
+
+        model.addAttribute("name", "홍길동"); //request scope에 저장
         return "index"; // view 이름  →  /WEB-INF/views/index.jsp
     }
 }

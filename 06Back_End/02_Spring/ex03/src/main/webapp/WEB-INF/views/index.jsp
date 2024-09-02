@@ -5,6 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-<h1>환 영 합 니 도</h1>
+<h1>${name}님 환 영 합 니 도</h1>
 </body>
 </html>
