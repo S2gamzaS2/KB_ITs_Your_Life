@@ -5,6 +5,7 @@ import org.scoula.ex03.dto.SampleDTO;
 import org.scoula.ex03.dto.TodoDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 
@@ -71,4 +72,33 @@ public class SampleController {
 
         return "sample/ex04";
     }
+
+    //*void 타입 리턴
+    @GetMapping("/ex05") //url=뷰이름 : /sample/ex05
+    public void ex05() {
+        log.info("/ex05..........");
+    }
+
+    //*RedirectAttribute
+    @GetMapping("/ex06")
+    public String ex06(RedirectAttributes ra) {
+        log.info("/ex06..........");
+        ra.addAttribute("name", "AAA");
+        ra.addAttribute("age", 10);
+
+        return "redirect:/sample/ex06-2";
+    }
+
+    //*객체리턴
+    @GetMapping("/ex07")
+    public @ResponseBody SampleDTO ex07() {
+        log.info("/ex07..........");
+
+        SampleDTO dto = new SampleDTO();
+        dto.setAge(10);
+        dto.setName("홍길동");
+
+        return dto;
+    }
+
 }
