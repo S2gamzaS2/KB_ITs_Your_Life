@@ -11,6 +11,7 @@ class Solution{
 
         if(int i = 0; i < Len; i++) {
             if(visited[i]) continue;
+            break;
         }
 
     }
